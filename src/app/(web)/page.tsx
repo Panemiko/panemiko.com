@@ -1,5 +1,13 @@
 import { MaxWidth } from "@/components/max-width";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { CustomButton } from "@/components/ui/custom-button";
+import { CustomLink } from "@/components/ui/link";
+import { siteConfig } from "@/lib/config";
 import { CheckCircleIcon } from "lucide-react";
 import { WebsitesCarousel } from "./websites-carousel";
 
@@ -269,7 +277,7 @@ export default function Page() {
         </MaxWidth>
       </section>
 
-      <section className="bg-card relative my-32 overflow-x-clip py-32">
+      <section className="bg-card relative my-16 overflow-x-clip py-32">
         <div className="relative mb-32">
           {/* strips */}
           <div className="absolute -bottom-42 grid w-full grid-cols-3">
@@ -289,7 +297,7 @@ export default function Page() {
             sabendo que seu site está funcionando como planejado. 
           </p>
 
-          <ol className="space-y-4 mb-40">
+          <ol className="mb-40 space-y-4">
             <li className="flex items-center gap-4">
               <CheckCircleIcon className="text-accent" />
               <span className="text-foreground/70">
@@ -328,6 +336,150 @@ export default function Page() {
           <p className="text-foreground/70 text-center text-xs">
             Descubra o Site Ideal para o Seu Negócio
           </p>
+        </MaxWidth>
+      </section>
+
+      <section className="relative overflow-x-clip py-16">
+        {/* shadow */}
+        <div className="from-green/10 absolute top-0 left-1/2 -z-20 h-1/2 w-[600px] bg-linear-to-b to-transparent blur-3xl" />
+
+        <MaxWidth>
+          {/* image preview */}
+          <div className="bg-foreground/10 mb-20 h-[16rem] w-full rounded-lg" />
+
+          <h2 className="font-title text-foreground mb-12 text-left text-4xl uppercase">
+            Sobre mim
+          </h2>
+
+          <p className="text-foreground/70 mb-8">
+            Opa, meu nome é Tito! Moro em Santa Cruz do Sul - RS e desde minha
+            adolescência venho fazendo sites e outros projetos relacionados a
+            programação e design.
+          </p>
+
+          <p className="text-foreground/70 mb-24">
+            Sempre tive interesse por desenvolvimento web e principalmente ver
+            os limites que não são explorados na criação de sites. Pode contar
+            comigo para fazer o seu site se destacar de todos os outros.
+          </p>
+        </MaxWidth>
+      </section>
+
+      <section className="relative overflow-x-clip py-16">
+        <MaxWidth>
+          <h2 className="font-title text-foreground mb-12 text-left text-4xl uppercase">
+            Perguntas frequentes
+          </h2>
+
+          <p className="text-foreground/70 mb-20">
+            Caso tenha sobrado alguma questão para nós, fique a vontade para nos{" "}
+            <CustomLink href={`mailto:${siteConfig.email}`}>
+              enviar um e-mail com a sua pergunta
+            </CustomLink>
+            . Vamos ter o maior prazer em te ajudar!
+          </p>
+
+          <div>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  Quais tipos de sites vocês criam?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Qualquer tipo de site, desde landing pages para o lançamento
+                  de produtos até sites institucionais, para você ter um cartão
+                  digital para sua empresa.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>
+                  Qual é o prazo para a criação de um website?
+                </AccordionTrigger>
+                <AccordionContent>
+                  O prazo está bem aberto para definirmos, nenhum site demorou
+                  mais de 6 semanas para ser feito, porém caso o tempo seja
+                  importante para você, podemos ver de fazer mais rapidamente.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>
+                  Vocês oferecem algum tipo de garantia?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Depois do site estar no ar pronto para receber visitantes,
+                  você tem direito a pedir até 3 alterações por mês no seu site.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>
+                  Preciso fornecer todo o conteúdo para o meu site?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Podemos escrever o conteúdo para seu site, mas as informações
+                  precisam ser dadas por você. É importante que coisas como
+                  meios de pagamento, depoimentos, biografias, ou outras
+                  informações relacionadas ao seu negócio sejam verídicas para
+                  não afetar a credibilidade da sua marca.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5">
+                <AccordionTrigger>
+                  Como funciona o processo de criação do site?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Você pode verificar na seção de processos para saber como nos
+                  criamos o seu site.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-6">
+                <AccordionTrigger>
+                  Terei participação nas etapas de criação?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Sim! Ao final de toda parte do processo de criação do seu site
+                  você irá avaliar e nos dar um feedback sobre mudanças e se
+                  podemos continuar para a próxima etapa.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-7">
+                <AccordionTrigger>
+                  Vocês otimizam o site para mecanismos de busca (SEO)?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Escrevemos à mão todas os campos importantes para a otimização
+                  do mecânismo de busca do seu site, garantindo que ele seja
+                  facilmente encontrado pelos seus potenciais clientes.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-8">
+                <AccordionTrigger>
+                  O que significa ter um site &quot;otimizado para
+                  conversão&quot;?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Significa ter um site que seja pronto e preparado para guiar o
+                  visitante até a ação que você deseja que ele realize, como
+                  preencher um formulário ou contatar o seu WhatsApp.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-9">
+                <AccordionTrigger>
+                  Quanto custa criar um website com vocês?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Não podemos definir um valor fixo para o seu site por conta de
+                  diversos fatores, como as diferenças que um site para outro
+                  pode ter, tipos de site (institucional ou landing pages),
+                  entre outros fatores. Caso queira saber quanto o seu site pode
+                  custar,{" "}
+                  <CustomLink href="/contate-nos">
+                    peça um orçamento grátis para nós
+                  </CustomLink>
+                  .
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </MaxWidth>
       </section>
     </main>
