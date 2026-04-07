@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --color-accent: #d41c4d;
+}
+
+@layer base {
+  body {
+    @apply selection:bg-accent bg-white font-mono text-zinc-900 antialiased selection:text-white;
+  }
+}
