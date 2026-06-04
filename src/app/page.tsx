@@ -28,18 +28,18 @@ export default function Page() {
   ];
 
   return (
-    <main className="max-w-4xl md:max-w-6xl px-12 pt-16 pb-24 md:px-24 md:pt-24 md:pb-32 lg:ml-[8%]">
+    <main className="max-w-4xl px-12 pt-16 pb-24 md:max-w-6xl md:px-24 md:pt-24 md:pb-32 lg:ml-[8%]">
       <section className="mb-16">
-        <h1 className="mb-2 text-xl font-medium tracking-tight md:text-[1.5625rem]">
+        <h1 className="font-heading mb-2 text-xl font-medium tracking-tight md:text-[1.5625rem]">
           Tito Oliveira
         </h1>
-        <p className="text-zinc-500 md:text-[1.25rem]">
+        <p className="font-heading text-foreground/50 md:text-xl">
           Web Full-Stack Developer based in Porto Alegre, Brazil.
         </p>
       </section>
       <div className="mb-16 grid gap-12 md:grid-cols-[300px_1fr] md:gap-24">
         <section>
-          <h2 className="mb-4 text-sm font-semibold tracking-widest text-zinc-400 uppercase md:text-[1.09375rem]">
+          <h2 className="font-heading text-muted-foreground mb-4 text-sm font-semibold tracking-widest uppercase md:text-lg">
             My projects
           </h2>
           <ul className="space-y-3">
@@ -49,10 +49,10 @@ export default function Page() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group hover:border-accent flex items-center justify-between border-b border-zinc-100 py-1 md:py-2 transition-colors md:text-[1.25rem]"
+                  className="group hover:border-primary border-border flex items-center justify-between border-b py-1 transition-colors md:py-2 md:text-xl"
                 >
                   <span>{project.name}</span>
-                  <span className="group-hover:text-accent text-zinc-300 transition-colors">
+                  <span className="group-hover:text-primary text-muted-foreground transition-colors">
                     ↗
                   </span>
                 </Link>
@@ -62,7 +62,7 @@ export default function Page() {
         </section>
 
         <section>
-          <h2 className="mb-4 text-sm font-semibold tracking-widest text-zinc-400 uppercase md:text-[1.09375rem]">
+          <h2 className="font-heading text-muted-foreground mb-4 text-sm font-semibold tracking-widest uppercase md:text-lg">
             Pages made by me
           </h2>
           <ul className="space-y-3">
@@ -72,10 +72,10 @@ export default function Page() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group hover:border-accent flex items-center justify-between border-b border-zinc-100 py-1 md:py-2 transition-colors md:text-[1.25rem]"
+                  className="group hover:border-primary border-border flex items-center justify-between border-b py-1 transition-colors md:py-2 md:text-xl"
                 >
                   <span>{project.name}</span>
-                  <span className="group-hover:text-accent text-zinc-300 transition-colors">
+                  <span className="group-hover:text-primary text-muted-foreground transition-colors">
                     ↗
                   </span>
                 </Link>
@@ -86,7 +86,7 @@ export default function Page() {
       </div>
 
       <section>
-        <h2 className="mb-4 text-sm font-semibold tracking-widest text-zinc-400 uppercase md:text-[1.09375rem]">
+        <h2 className="text-muted-foreground mb-4 text-sm font-semibold tracking-widest uppercase md:text-lg">
           Contact
         </h2>
         <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
@@ -96,7 +96,7 @@ export default function Page() {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:border-accent hover:text-accent w-fit border-b border-transparent transition-colors md:text-[1.25rem]"
+              className="hover:border-primary hover:text-primary w-fit border-b border-transparent transition-colors md:text-xl"
             >
               {item.name}
             </Link>
@@ -104,10 +104,8 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="mt-32 flex flex-col gap-1 text-[10px] tracking-[0.2em] text-zinc-500 md:text-[12.5px]">
-        <span>
-          &copy; {new Date().getFullYear()} — dont know what to put here
-        </span>
+      <footer className="text-foreground/50 mt-32 flex flex-col gap-1 text-[10px] tracking-[0.2em] md:text-[12.5px]">
+        <span>&copy; {new Date().getFullYear()}</span>
       </footer>
     </main>
   );
