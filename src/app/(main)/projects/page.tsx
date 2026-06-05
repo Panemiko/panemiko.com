@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { LayoutTemplate } from "lucide-react";
+import { Link } from "next-view-transitions";
 
-export default function Page() {
+export default function ProjectsPage() {
   const codingProjects = [
     { name: "Paperflow", link: "https://github.com/panemiko/paperflow" },
     { name: "ImageReader", link: "https://github.com/Panemiko/image-reader" },
@@ -21,26 +22,26 @@ export default function Page() {
     },
   ];
 
-  const contact = [
-    { name: "GitHub", link: "https://github.com/panemiko" },
-    { name: "LinkedIn", link: "https://linkedin.com/in/tito-oliveira" },
-    { name: "titoluccao@gmail.com", link: "mailto:titoluccao@gmail.com" },
-  ];
-
   return (
-    <main className="max-w-4xl px-12 pt-16 pb-24 md:max-w-6xl md:px-24 md:pt-24 md:pb-32 lg:ml-[8%]">
-      <section className="mb-16">
-        <h1 className="font-heading mb-2 text-xl font-medium tracking-tight md:text-[1.5625rem]">
-          Tito Oliveira
-        </h1>
+    <>
+      <section className="relative mb-16">
+        <div className="pointer-events-none fixed right-[-10%] bottom-[-10%] -z-10 h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-[120px]" />
+        <div className="mb-2 flex items-center gap-3 md:gap-4">
+          <LayoutTemplate className="size-8 text-purple-500 md:size-10" />
+
+          <h1 className="font-heading text-xl font-medium tracking-tight md:text-[1.5625rem]">
+            Projects
+          </h1>
+        </div>
         <p className="font-heading text-foreground/50 md:text-xl">
-          Web Full-Stack Developer based in Porto Alegre, Brazil.
+          A collection of projects I&apos;ve built.
         </p>
       </section>
+
       <div className="mb-16 grid gap-12 md:grid-cols-[300px_1fr] md:gap-24">
         <section>
           <h2 className="font-heading text-muted-foreground mb-4 text-sm font-semibold tracking-widest uppercase md:text-lg">
-            My projects
+            My Projects
           </h2>
           <ul className="space-y-3">
             {codingProjects.map((project) => (
@@ -85,28 +86,9 @@ export default function Page() {
         </section>
       </div>
 
-      <section>
-        <h2 className="text-muted-foreground mb-4 text-sm font-semibold tracking-widest uppercase md:text-lg">
-          Contact
-        </h2>
-        <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
-          {contact.map((item) => (
-            <Link
-              key={item.name}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:border-primary hover:text-primary w-fit border-b border-transparent transition-colors md:text-xl"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </section>
-
       <footer className="text-foreground/50 mt-32 flex flex-col gap-1 text-[10px] tracking-[0.2em] md:text-[12.5px]">
         <span>&copy; {new Date().getFullYear()}</span>
       </footer>
-    </main>
+    </>
   );
 }

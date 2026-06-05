@@ -16,7 +16,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
               "children" in child.props)),
       ) as React.ReactElement<{ children?: React.ReactNode }> | undefined;
 
-      const codeText = codeElement?.props?.children?.toString() || "";
+      const codeText =
+        typeof codeElement?.props?.children === "string"
+          ? codeElement.props.children
+          : "";
 
       return (
         <div className="group relative">

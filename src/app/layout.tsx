@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 
+import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { type Metadata } from "next";
@@ -42,35 +43,42 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "font-sans",
-        jetBrainsMonoSans.variable,
-        jetBrainsMonoHeading.variable,
-      )}
-      suppressHydrationWarning
-    >
-      <body className="bg-background relative grid min-h-screen grid-cols-[auto_1fr] overflow-x-hidden">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {/* Decorative Spine */}
-          <div className="flex h-screen w-6 flex-row lg:w-12 print:hidden">
-            <div className="h-full flex-1 bg-[#6324d6]" />
-            <div className="h-full flex-1 bg-[#94152a]" />
-            <div className="bg-primary h-full flex-1" />
-          </div>
+    <ViewTransitions>
+      <html
+        lang="en"
+        className={cn(
+          "font-sans",
+          jetBrainsMonoSans.variable,
+          jetBrainsMonoHeading.variable,
+        )}
+        suppressHydrationWarning
+      >
+        <body className="bg-background relative grid min-h-screen grid-cols-[auto_1fr] overflow-x-hidden">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {/* Decorative Spine */}
+            <div
+              className="flex h-screen w-6 flex-row lg:w-12 print:hidden"
+              style={{ viewTransitionName: "spine" }}
+            >
+              <div className="h-full flex-1 bg-[#6324d6]" />
+              <div className="h-full flex-1 bg-[#94152a]" />
+              <div className="bg-primary h-full flex-1" />
+            </div>
 
-          <div className="grid grid-rows-[auto_1fr]">
-            <Header />
-            <div className="relative z-10 pt-16">{children}</div>
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
+            <div className="grid h-screen grid-rows-[auto_1fr] overflow-y-auto">
+              <div style={{ viewTransitionName: "header" }}>
+                <Header />
+              </div>
+              <div>{children}</div>
+            </div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

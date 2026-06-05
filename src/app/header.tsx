@@ -3,12 +3,12 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { CircleIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between bg-transparent p-4">
-      <div className="flex items-center">
+    <header className="flex flex-wrap items-center justify-between gap-y-4 bg-transparent p-4">
+      <div className="order-1 flex items-center">
         <Button variant="ghost" size="icon-lg" asChild>
           <Link href="/">
             <CircleIcon className="text-primary fill-primary size-6" />
@@ -17,24 +17,24 @@ export function Header() {
         </Button>
       </div>
 
-      <nav className="flex items-center gap-2">
-        <Button variant="ghost" asChild>
-          <Link href="/about">about</Link>
-        </Button>
-        <Button variant="ghost" asChild>
-          <Link href="/projects">projects</Link>
-        </Button>
-        <Button variant="ghost" asChild>
-          <Link href="/websites">websites</Link>
-        </Button>
-        <Button variant="ghost" asChild>
-          <Link href="/articles">articles</Link>
-        </Button>
-      </nav>
-
-      <div className="flex items-center">
+      <div className="order-2 flex items-center sm:order-3">
         <ThemeToggle />
       </div>
+
+      <nav className="order-3 flex w-full flex-wrap items-center justify-center gap-2 sm:order-2 sm:w-auto">
+        <Button variant="ghost" asChild>
+          <Link href="/about">About</Link>
+        </Button>
+        <Button variant="ghost" asChild>
+          <Link href="/projects">Projects</Link>
+        </Button>
+        <Button variant="ghost" asChild>
+          <Link href="/articles">Articles</Link>
+        </Button>
+        <Button variant="ghost" asChild>
+          <Link href="/contact">Contact</Link>
+        </Button>
+      </nav>
     </header>
   );
 }

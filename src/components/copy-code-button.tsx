@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Check, Copy } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { Button } from "./ui/button";
 
 interface CopyCodeButtonProps {
   code: string;
@@ -19,15 +19,14 @@ export function CopyCodeButton({ code, className }: CopyCodeButtonProps) {
   };
 
   return (
-    <button
+    <Button
+      size="icon"
+      className={className}
+      variant="outline"
       onClick={copy}
-      className={cn(
-        "flex h-8 w-8 items-center justify-center rounded-md border border-zinc-700 bg-zinc-800 text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-zinc-100",
-        className,
-      )}
       aria-label="Copy code"
     >
       {isCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-    </button>
+    </Button>
   );
 }
