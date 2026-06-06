@@ -18,24 +18,24 @@ const jetBrainsMonoSans = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tito Oliveira | Web Full-Stack Developer",
+  title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
   description:
-    "Web Full-Stack Developer based in Porto Alegre, Brazil. Projects and contact information.",
+    "Desenvolvedor Web Full-Stack baseado em Porto Alegre, Brasil. Projetos e informações de contato.",
   icons: [{ rel: "icon", url: "/icon.svg", type: "image/svg+xml" }],
   openGraph: {
-    title: "Tito Oliveira | Web Full-Stack Developer",
+    title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
     description:
-      "Web Full-Stack Developer based in Porto Alegre, Brazil. Projects and contact information.",
+      "Desenvolvedor Web Full-Stack baseado em Porto Alegre, Brasil. Projetos e informações de contato.",
     url: "https://panemiko.com",
     siteName: "Tito Oliveira",
-    locale: "en_US",
+    locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tito Oliveira | Web Full-Stack Developer",
+    title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
     description:
-      "Web Full-Stack Developer based in Porto Alegre, Brazil. Projects and contact information.",
+      "Desenvolvedor Web Full-Stack baseado em Porto Alegre, Brasil. Projetos e informações de contato.",
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html
-        lang="en"
+        lang="pt-BR"
         className={cn(
           "font-sans",
           jetBrainsMonoSans.variable,

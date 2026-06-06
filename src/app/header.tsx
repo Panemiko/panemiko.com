@@ -12,7 +12,7 @@ export function Header() {
         <Button variant="ghost" size="icon-lg" asChild>
           <Link href="/">
             <CircleIcon className="text-primary fill-primary size-6" />
-            <span className="sr-only">Home</span>
+            <span className="sr-only">Início</span>
           </Link>
         </Button>
       </div>
@@ -23,16 +23,16 @@ export function Header() {
 
       <nav className="order-3 flex w-full flex-wrap items-center justify-center gap-2 sm:order-2 sm:w-auto">
         <Button variant="ghost" asChild>
-          <Link href="/about">About</Link>
+          <Link href="/">Sobre</Link>
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/projects">Projects</Link>
+          <Link href="/projects">Projetos</Link>
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/articles">Articles</Link>
+          <Link href="/articles">Artigos</Link>
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">Contato</Link>
         </Button>
       </nav>
     </header>

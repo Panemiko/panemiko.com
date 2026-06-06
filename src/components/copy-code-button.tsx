@@ -24,7 +24,7 @@ export function CopyCodeButton({ code, className }: CopyCodeButtonProps) {
       className={className}
       variant="outline"
       onClick={copy}
-      aria-label="Copy code"
+      aria-label="Copiar código"
     >
       {isCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
     </Button>
