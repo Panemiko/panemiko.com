@@ -1,16 +1,12 @@
+import { CustomLink } from "@/components/shared/custom-link";
+import { MaxWidth } from "@/components/shared/max-width";
 import { GitHubIcon } from "@/components/shared/social-icons";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  FileText,
-  Layout,
-  MessageSquare,
-} from "lucide-react";
-import { Link } from "next-view-transitions";
+import { FileText, Layout, MessageSquare } from "lucide-react";
 
 export default function Page() {
   return (
-    <>
+    <MaxWidth>
       {/* Hero Section */}
       <section className="relative mb-20">
         <div className="mb-2 flex items-center gap-3 md:gap-4">
@@ -19,37 +15,28 @@ export default function Page() {
           </h1>
         </div>
         <p className="font-heading text-foreground/50 md:text-2xl">
-          Web Full-Stack Developer based in Porto Alegre, Brazil.
+          Desenvolvedor Web Full-Stack em Porto Alegre, Brasil.
         </p>
       </section>
 
       {/* About Section */}
       <section className="mb-24 max-w-2xl">
         <h2 className="font-heading text-muted-foreground mb-6 text-sm font-semibold tracking-widest uppercase md:text-lg">
-          About
+          Sobre
         </h2>
         <div className="text-muted-foreground space-y-4 md:text-xl md:leading-relaxed">
           <p>
-            <strong className="text-foreground">Hey, I&apos;m Tito.</strong>
+            <strong className="text-foreground">Olá, eu sou o Tito 👋</strong>
           </p>
           <p>
-            I&apos;m a full-stack developer who turns ridiculous ideas into
-            reality. I prefer the unconventional over the standard, building
-            things that stand out and push boundaries.
+            Alguém que tenta sempre fazer a coisa mais ridícula possível, porque
+            quando der certo vai ser engraçado.
           </p>
           <p>
-            Currently seeking a role as a{" "}
-            <strong className="text-foreground">Software Engineer</strong>.{" "}
-            <strong className="text-foreground">
-              Have a wild project?{" "}
-              <Link
-                href="/contact"
-                className="underline transition-colors hover:text-primary"
-              >
-                Let&apos;s build it
-              </Link>
-              .
-            </strong>
+            Atualmente em busca de uma oportunidade como{" "}
+            <strong className="text-foreground">Engenheiro de Software</strong>.{" "}
+            Tem uma ideia, quer fazer uma crítica ou apenas conversar? Fique a
+            vontade para <CustomLink href="/contact">falar comigo</CustomLink>.
           </p>
         </div>
       </section>
@@ -57,60 +44,52 @@ export default function Page() {
       {/* Quick Actions */}
       <section>
         <h2 className="font-heading text-muted-foreground mb-8 text-sm font-semibold tracking-widest uppercase md:text-lg">
-          Quick Actions
+          Ações Rápidas
         </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="group h-auto w-full justify-start gap-3 px-6 py-4 sm:justify-center md:text-lg"
+            className="group h-auto w-full justify-start gap-3 px-6 py-4 md:text-lg"
           >
-            <Link href="/contact">
+            <CustomLink href="/contact" variant="unstyled">
               <MessageSquare className="text-primary size-5" />
-              <span>Contact Me</span>
-              <ArrowRight className="ml-auto size-5 opacity-0 transition-all group-hover:opacity-100 sm:ml-0" />
-            </Link>
+              <span>Fale Comigo</span>
+            </CustomLink>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="group h-auto w-full justify-start gap-3 px-6 py-4 sm:justify-center md:text-lg"
+            className="group h-auto w-full justify-start gap-3 px-6 py-4 md:text-lg"
           >
-            <Link href="/projects">
+            <CustomLink href="/projects" variant="unstyled">
               <Layout className="text-primary size-5" />
-              <span>My Projects</span>
-              <ArrowRight className="ml-auto size-5 opacity-0 transition-all group-hover:opacity-100 sm:ml-0" />
-            </Link>
+              <span>Meus Projetos</span>
+            </CustomLink>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="group h-auto w-full justify-start gap-3 px-6 py-4 sm:justify-center md:text-lg"
+            className="group h-auto w-full justify-start gap-3 px-6 py-4 md:text-lg"
           >
-            <Link href="/articles">
+            <CustomLink href="/articles" variant="unstyled">
               <FileText className="text-primary size-5" />
-              <span>My Articles</span>
-              <ArrowRight className="ml-auto size-5 opacity-0 transition-all group-hover:opacity-100 sm:ml-0" />
-            </Link>
+              <span>Meus Artigos</span>
+            </CustomLink>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="group h-auto w-full justify-start gap-3 px-6 py-4 sm:justify-center md:text-lg"
+            className="group h-auto w-full justify-start gap-3 px-6 py-4 md:text-lg"
           >
-            <Link
-              href="https://github.com/panemiko"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <CustomLink href="https://github.com/panemiko" variant="unstyled">
               <GitHubIcon className="text-primary size-5" />
-              <span>My GitHub</span>
-              <ArrowRight className="ml-auto size-5 opacity-0 transition-all group-hover:opacity-100 sm:ml-0" />
-            </Link>
+              <span>Meu GitHub</span>
+            </CustomLink>
           </Button>
         </div>
       </section>
@@ -118,6 +97,6 @@ export default function Page() {
       <footer className="text-foreground/50 mt-32 flex flex-col gap-1 text-[10px] tracking-[0.2em] md:text-[12.5px]">
         <span>&copy; {new Date().getFullYear()}</span>
       </footer>
-    </>
+    </MaxWidth>
   );
 }

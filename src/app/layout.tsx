@@ -20,12 +20,12 @@ const jetBrainsMonoSans = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
   description:
-    "Desenvolvedor Web Full-Stack baseado em Porto Alegre, Brasil. Projetos e informações de contato.",
+    "Desenvolvedor Web Full-Stack em Porto Alegre, Brasil. Projetos e informações de contato.",
   icons: [{ rel: "icon", url: "/icon.svg", type: "image/svg+xml" }],
   openGraph: {
     title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
     description:
-      "Desenvolvedor Web Full-Stack baseado em Porto Alegre, Brasil. Projetos e informações de contato.",
+      "Desenvolvedor Web Full-Stack em Porto Alegre, Brasil. Projetos e informações de contato.",
     url: "https://panemiko.com",
     siteName: "Tito Oliveira",
     locale: "pt_BR",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
     description:
-      "Desenvolvedor Web Full-Stack baseado em Porto Alegre, Brasil. Projetos e informações de contato.",
+      "Desenvolvedor Web Full-Stack em Porto Alegre, Brasil. Projetos e informações de contato.",
   },
 };
 

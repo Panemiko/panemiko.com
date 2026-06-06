@@ -1,6 +1,6 @@
 import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
 import Image from "next/image";
-import { Link } from "next-view-transitions";
+import { CustomLink } from "@/components/shared/custom-link";
 import {
   Empty,
   EmptyHeader,
@@ -8,6 +8,7 @@ import {
   EmptyDescription,
 } from "@/components/ui/empty";
 import { FileText } from "lucide-react";
+import { MaxWidth } from "@/components/shared/max-width";
 
 export default function ArticlesPage() {
   const slugs = getAllPostSlugs();
@@ -21,18 +22,18 @@ export default function ArticlesPage() {
     );
 
   return (
-    <>
+    <MaxWidth>
       <section className="relative mb-16">
         <div className="pointer-events-none fixed right-[-10%] bottom-[-10%] -z-10 h-[500px] w-[500px] rounded-full bg-green-500/10 blur-[120px]" />
         <div className="mb-2 flex items-center gap-3 md:gap-4">
           <FileText className="size-8 text-green-500 md:size-10" />
 
           <h1 className="font-heading text-xl font-medium tracking-tight md:text-[1.5625rem]">
-            Articles
+            Artigos
           </h1>
         </div>
         <p className="font-heading text-foreground/50 md:text-xl">
-          Thoughts on development, design, and technology.
+          Reflexões sobre desenvolvimento, design e tecnologia.
         </p>
       </section>
 
@@ -53,8 +54,9 @@ export default function ArticlesPage() {
 
               return (
                 <li key={post.slug}>
-                  <Link
+                  <CustomLink
                     href={`/${post.slug}`}
+                    variant="unstyled"
                     className="group flex flex-col items-start justify-between gap-6 border-b py-10 last:border-0 sm:flex-row sm:items-center"
                   >
                     <div className="space-y-3 sm:max-w-[70%]">
@@ -84,7 +86,7 @@ export default function ArticlesPage() {
                         sizes="(max-width: 640px) 100vw, 192px"
                       />
                     </div>
-                  </Link>
+                  </CustomLink>
                 </li>
               );
             })}
@@ -93,10 +95,10 @@ export default function ArticlesPage() {
           <Empty className="items-start justify-start border-none p-0">
             <EmptyHeader className="items-start text-left">
               <EmptyTitle className="text-xl md:text-2xl">
-                No posts yet
+                Nenhum artigo por enquanto
               </EmptyTitle>
               <EmptyDescription className="font-heading text-foreground/50 md:text-xl">
-                Check back later for new articles and thoughts.
+                Volte em breve para acompanhar novos artigos e reflexões.
               </EmptyDescription>
             </EmptyHeader>
           </Empty>
@@ -106,6 +108,6 @@ export default function ArticlesPage() {
       <footer className="text-foreground/50 mt-32 flex flex-col gap-1 text-[10px] tracking-[0.2em] md:text-[12.5px]">
         <span>&copy; {new Date().getFullYear()}</span>
       </footer>
-    </>
+    </MaxWidth>
   );
 }

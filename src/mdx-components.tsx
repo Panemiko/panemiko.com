@@ -1,10 +1,16 @@
 import type { MDXComponents } from "mdx/types";
 import { CopyCodeButton } from "@/components/copy-code-button";
+import { CustomLink } from "@/components/shared/custom-link";
 import React from "react";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
+    a: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+      <CustomLink href={href ?? ""} {...props}>
+        {children}
+      </CustomLink>
+    ),
     pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
       // Extract code text from children to pass to CopyCodeButton
       const codeElement = React.Children.toArray(children).find(

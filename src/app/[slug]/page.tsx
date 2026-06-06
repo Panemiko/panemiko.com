@@ -4,9 +4,10 @@ import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Link } from "next-view-transitions";
+import { CustomLink } from "@/components/shared/custom-link";
 import { notFound } from "next/navigation";
 import { LinkedInIcon, XIcon } from "@/components/shared/social-icons";
+import { MaxWidth } from "@/components/shared/max-width";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -83,15 +84,16 @@ export default async function PostPage({ params }: PageProps) {
   const shareUrl = `https://panemiko.com/${slug}`;
 
   return (
-    <div className="mx-auto max-w-2xl px-4 pt-20 pb-40">
+    <MaxWidth className="pt-20 pb-40">
       <div className="mb-12">
-        <Link
+        <CustomLink
           href="/articles"
+          variant="unstyled"
           className="group text-muted-foreground hover:text-foreground flex w-fit items-center gap-2 text-sm transition-colors"
         >
           <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Go back
-        </Link>
+          Voltar
+        </CustomLink>
       </div>
 
       <div>
@@ -145,28 +147,27 @@ export default async function PostPage({ params }: PageProps) {
           <footer className="border-border mt-16 border-t pt-8">
             <div className="flex items-center justify-between">
               <span className="text-muted-foreground text-sm font-medium">
-                Share this post
+                Compartilhar este artigo
               </span>
               <div className="flex gap-4">
                 <Button asChild variant="ghost" size="icon">
-                  <Link
+                  <CustomLink
                     href={`https://x.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(shareUrl)}`}
+                    variant="unstyled"
                     aria-label="Share on X"
-                    target="_blank"
                   >
                     <XIcon />
-                  </Link>
+                  </CustomLink>
                 </Button>
 
                 <Button asChild variant="ghost" size="icon">
-                  <Link
+                  <CustomLink
                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    variant="unstyled"
                     aria-label="Share on LinkedIn"
                   >
                     <LinkedInIcon />
-                  </Link>
+                  </CustomLink>
                 </Button>
               </div>
             </div>
@@ -178,17 +179,18 @@ export default async function PostPage({ params }: PageProps) {
             {headings.length > 0 && (
               <div className="mb-8">
                 <h2 className="text-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
-                  On this page
+                  Nesta página
                 </h2>
                 <nav className="flex flex-col gap-3">
                   {headings.map((heading) => (
-                    <Link
+                    <CustomLink
                       key={heading.id}
                       href={`#${heading.id}`}
+                      variant="unstyled"
                       className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                     >
                       {heading.text}
-                    </Link>
+                    </CustomLink>
                   ))}
                 </nav>
               </div>
@@ -196,7 +198,7 @@ export default async function PostPage({ params }: PageProps) {
           </div>
         </aside> */}
       </div>
-    </div>
+    </MaxWidth>
   );
 }
 

@@ -34,11 +34,13 @@ export function getPostBySlug(slug: string): Post | null {
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
   const stats = readingTime(content);
+  const minutes = Math.ceil(stats.minutes);
+  const readingTimeText = `${minutes} min de leitura`;
 
   return {
     slug,
     frontmatter: data as PostFrontmatter,
-    readingTime: stats.text,
+    readingTime: readingTimeText,
     content,
   };
 }
