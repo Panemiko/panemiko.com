@@ -29,8 +29,8 @@ export default function Page() {
             <strong className="text-foreground">Olá, eu sou o Tito 👋</strong>
           </p>
           <p>
-            Alguém que tenta sempre fazer a coisa mais ridícula possível, porque
-            quando der certo vai ser engraçado.
+            Tentando sempre fazer a coisa mais ridícula possível, porque quando
+            der certo vai ser engraçado.
           </p>
           <p>
             Atualmente em busca de uma oportunidade como{" "}
