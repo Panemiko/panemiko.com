@@ -104,17 +104,13 @@ export default async function PostPage({ params }: PageProps) {
             </h1>
             <div className="text-muted-foreground mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
               <time dateTime={frontmatter.date}>
-                {new Date(frontmatter.date).toLocaleDateString(
-                  frontmatter.language === "pt" ? "pt-BR" : "en-US",
-                  {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  },
-                )}
+                {new Date(frontmatter.date).toLocaleDateString("pt-BR", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
               </time>
               <span>{readingTime}</span>
-              <span className="uppercase">{frontmatter.language}</span>
             </div>
 
             {frontmatter.tags && frontmatter.tags.length > 0 && (

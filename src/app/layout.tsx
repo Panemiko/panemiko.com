@@ -68,7 +68,7 @@ export default function RootLayout({
           >
             {/* Decorative Spine */}
             <div
-              className="flex h-screen w-6 flex-row lg:w-12 print:hidden"
+              className="flex h-screen w-2 flex-row lg:w-12 print:hidden"
               style={{ viewTransitionName: "spine" }}
             >
               <div className="h-full flex-1 bg-[#6324d6]" />

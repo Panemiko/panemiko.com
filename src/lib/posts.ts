@@ -10,7 +10,6 @@ export interface PostFrontmatter {
   description?: string;
   cover: string;
   date: string;
-  language: "pt" | "en";
   tags?: string[];
 }
 

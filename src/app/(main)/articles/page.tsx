@@ -43,14 +43,11 @@ export default function ArticlesPage() {
             {posts.map((post) => {
               const formattedDate = new Date(
                 post.frontmatter.date,
-              ).toLocaleDateString(
-                post.frontmatter.language === "pt" ? "pt-BR" : "en-US",
-                {
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                },
-              );
+              ).toLocaleDateString("pt-BR", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              });
 
               return (
                 <li key={post.slug}>
