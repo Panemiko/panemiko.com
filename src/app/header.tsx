@@ -23,16 +23,24 @@ export function Header() {
 
       <nav className="order-3 flex w-full flex-wrap items-center justify-center gap-2 sm:order-2 sm:w-auto">
         <Button variant="ghost" asChild>
-          <CustomLink href="/" variant="unstyled">Sobre</CustomLink>
+          <CustomLink href="/" variant="unstyled">
+            Sobre
+          </CustomLink>
         </Button>
         <Button variant="ghost" asChild>
-          <CustomLink href="/projects" variant="unstyled">Projetos</CustomLink>
+          <CustomLink href="/projects" variant="unstyled">
+            Projetos
+          </CustomLink>
         </Button>
         <Button variant="ghost" asChild>
-          <CustomLink href="/articles" variant="unstyled">Artigos</CustomLink>
+          <CustomLink href="/articles" variant="unstyled">
+            Artigos
+          </CustomLink>
         </Button>
         <Button variant="ghost" asChild>
-          <CustomLink href="/contact" variant="unstyled">Contato</CustomLink>
+          <CustomLink href="/contact" variant="unstyled">
+            Contato
+          </CustomLink>
         </Button>
       </nav>
     </header>

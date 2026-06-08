@@ -1,13 +1,13 @@
+import { CustomLink } from "@/components/shared/custom-link";
+import { MaxWidth } from "@/components/shared/max-width";
+import { LinkedInIcon, XIcon } from "@/components/shared/social-icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CustomLink } from "@/components/shared/custom-link";
 import { notFound } from "next/navigation";
-import { LinkedInIcon, XIcon } from "@/components/shared/social-icons";
-import { MaxWidth } from "@/components/shared/max-width";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -128,7 +128,7 @@ export default async function PostPage({ params }: PageProps) {
             )}
 
             {frontmatter.cover && (
-              <div className="relative mb-6 h-[300px] w-full overflow-hidden rounded-xl md:h-[400px]">
+              <div className="relative -mx-4 mb-6 h-[300px] w-[calc(100%+2rem)] overflow-hidden rounded-xl md:-mx-12 md:h-[400px] md:w-[calc(100%+6rem)] lg:-mx-24 lg:w-[calc(100%+12rem)]">
                 <Image
                   src={frontmatter.cover}
                   alt={frontmatter.title}
@@ -140,7 +140,7 @@ export default async function PostPage({ params }: PageProps) {
             )}
           </header>
 
-          <div className="prose prose-headings:font-heading prose-a:text-primary prose-headings:text-foreground **:text-muted-foreground **:border-border max-w-none">
+          <div className="prose prose-strong:text-foreground prose-headings:font-heading prose-a:text-primary prose-headings:text-foreground **:text-muted-foreground **:border-border max-w-none">
             <MdxComponent />
           </div>
 

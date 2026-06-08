@@ -151,3 +151,11 @@
 ::view-transition-new(root) {
   animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 }
+
+/* Remove default quote marks from blockquotes inside prose elements */
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none !important;
+}
+
+

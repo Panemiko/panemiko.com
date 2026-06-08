@@ -48,7 +48,8 @@ export default function ContactPage() {
           </h1>
         </div>
         <p className="font-heading text-foreground/50 md:text-xl">
-          Sinta-se à vontade para entrar em contato através de qualquer uma das plataformas abaixo.
+          Sinta-se à vontade para entrar em contato através de qualquer uma das
+          plataformas abaixo.
         </p>
       </section>
 
@@ -67,13 +68,14 @@ export default function ContactPage() {
                   <Icon className="text-muted-foreground group-hover:text-primary h-5 w-5 transition-colors" />
                   <span className="font-medium">{item.name}</span>
                   {item.name === "GitHub" && (
-                    <span className="text-muted-foreground/60 text-xs transition-opacity duration-200 opacity-0 group-hover:opacity-100 ml-2 hidden min-[450px]:inline select-none">
-                      (não dá pra me contatar mas eu tinha que colocar em algum lugar)
+                    <span className="text-muted-foreground/60 ml-2 hidden text-xs opacity-0 transition-opacity duration-200 select-none group-hover:opacity-100 min-[450px]:inline">
+                      (não dá pra me contatar mas eu tinha que colocar em algum
+                      lugar)
                     </span>
                   )}
                 </div>
                 <span className="group-hover:text-primary text-muted-foreground shrink-0 transition-colors">
-                  <ArrowUpRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 md:h-6 md:w-6" />
                 </span>
               </CustomLink>
             );

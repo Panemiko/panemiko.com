@@ -7,10 +7,7 @@ interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function MaxWidth({ children, className, ...props }: MaxWidthProps) {
   return (
-    <div
-      className={cn("mx-auto max-w-2xl px-4", className)}
-      {...props}
-    >
+    <div className={cn("mx-auto max-w-2xl px-4", className)} {...props}>
       {children}
     </div>
   );

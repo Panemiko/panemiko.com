@@ -16,26 +16,43 @@ import { MaxWidth } from "@/components/shared/max-width";
 
 export default function ProjectsPage() {
   const codingProjects: { name: string; link: string; icon: LucideIcon }[] = [
-    { name: "Paperflow", link: "https://github.com/panemiko/paperflow", icon: FolderGit2 },
-    { name: "ImageReader", link: "https://github.com/Panemiko/image-reader", icon: ScanText },
+    {
+      name: "Paperflow",
+      link: "https://github.com/panemiko/paperflow",
+      icon: FolderGit2,
+    },
+    {
+      name: "ImageReader",
+      link: "https://github.com/Panemiko/image-reader",
+      icon: ScanText,
+    },
     { name: "Chimera", link: "https://github.com/Panemiko/Chimera", icon: Cpu },
     { name: "CRM", link: "https://github.com/Panemiko/CRM", icon: Users },
   ];
 
-  const commercialProjects: { name: string; link: string; icon: LucideIcon }[] = [
-    { name: "getpaperflow.com", link: "https://getpaperflow.com", icon: Globe },
-    { name: "cobuilt.com.br", link: "https://cobuilt.com.br", icon: Building2 },
-    {
-      name: "clinicamichelecardoso.com.br",
-      link: "https://clinicamichelecardoso.com.br",
-      icon: HeartPulse,
-    },
-    {
-      name: "unintersantacruz.com.br",
-      link: "https://unintersantacruz.com.br",
-      icon: GraduationCap,
-    },
-  ];
+  const commercialProjects: { name: string; link: string; icon: LucideIcon }[] =
+    [
+      {
+        name: "getpaperflow.com",
+        link: "https://getpaperflow.com",
+        icon: Globe,
+      },
+      {
+        name: "cobuilt.com.br",
+        link: "https://cobuilt.com.br",
+        icon: Building2,
+      },
+      {
+        name: "clinicamichelecardoso.com.br",
+        link: "https://clinicamichelecardoso.com.br",
+        icon: HeartPulse,
+      },
+      {
+        name: "unintersantacruz.com.br",
+        link: "https://unintersantacruz.com.br",
+        icon: GraduationCap,
+      },
+    ];
 
   return (
     <MaxWidth>
@@ -69,11 +86,11 @@ export default function ProjectsPage() {
                     className="group hover:border-primary border-border flex items-center justify-between border-b py-1 transition-colors md:py-2 md:text-xl"
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className="text-muted-foreground group-hover:text-purple-500 h-5 w-5 transition-colors" />
+                      <Icon className="text-muted-foreground h-5 w-5 transition-colors group-hover:text-purple-500" />
                       <span>{project.name}</span>
                     </div>
                     <span className="group-hover:text-primary text-muted-foreground shrink-0 transition-colors">
-                      <ArrowUpRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 md:h-6 md:w-6" />
                     </span>
                   </CustomLink>
                 </li>
@@ -97,11 +114,11 @@ export default function ProjectsPage() {
                     className="group hover:border-primary border-border flex items-center justify-between border-b py-1 transition-colors md:py-2 md:text-xl"
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className="text-muted-foreground group-hover:text-purple-500 h-5 w-5 transition-colors" />
+                      <Icon className="text-muted-foreground h-5 w-5 transition-colors group-hover:text-purple-500" />
                       <span>{project.name}</span>
                     </div>
                     <span className="group-hover:text-primary text-muted-foreground shrink-0 transition-colors">
-                      <ArrowUpRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 md:h-6 md:w-6" />
                     </span>
                   </CustomLink>
                 </li>

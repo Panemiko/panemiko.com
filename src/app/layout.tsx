@@ -1,29 +1,35 @@
 import "@/styles/globals.css";
 
-import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { type Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
+import { Geist_Mono } from "next/font/google";
 import { Header } from "./header";
 
-const jetBrainsMonoHeading = JetBrains_Mono({
+const geistMonoHeading = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-heading",
 });
 
-const jetBrainsMonoSans = JetBrains_Mono({
+const geistMonoSans = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
+  title: {
+    default: "Tito Oliveira - Desenvolvedor Web Full-Stack",
+    template: "%s - Tito Oliveira",
+  },
   description:
     "Desenvolvedor Web Full-Stack em Porto Alegre, Brasil. Projetos e informações de contato.",
   icons: [{ rel: "icon", url: "/icon.svg", type: "image/svg+xml" }],
   openGraph: {
-    title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
+    title: {
+      default: "Tito Oliveira - Desenvolvedor Web Full-Stack",
+      template: "%s - Tito Oliveira",
+    },
     description:
       "Desenvolvedor Web Full-Stack em Porto Alegre, Brasil. Projetos e informações de contato.",
     url: "https://panemiko.com",
@@ -33,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tito Oliveira | Desenvolvedor Web Full-Stack",
+    title: "Tito Oliveira - Desenvolvedor Web Full-Stack",
     description:
       "Desenvolvedor Web Full-Stack em Porto Alegre, Brasil. Projetos e informações de contato.",
   },
@@ -48,8 +54,8 @@ export default function RootLayout({
         lang="pt-BR"
         className={cn(
           "font-sans",
-          jetBrainsMonoSans.variable,
-          jetBrainsMonoHeading.variable,
+          geistMonoSans.variable,
+          geistMonoHeading.variable,
         )}
         suppressHydrationWarning
       >
