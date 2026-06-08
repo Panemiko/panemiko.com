@@ -84,7 +84,19 @@ export default async function PostPage({ params }: PageProps) {
   const shareUrl = `https://panemiko.com/${slug}`;
 
   return (
-    <MaxWidth className="pt-20 pb-40">
+    <MaxWidth className="pt-2 md:pt-10 pb-40">
+      {frontmatter.cover && (
+        <div className="relative -mx-4 mb-8 h-[300px] w-[calc(100%+2rem)] overflow-hidden rounded-none md:rounded-xl md:-mx-12 md:w-[calc(100%+6rem)] lg:-mx-24 lg:w-[calc(100%+12rem)]">
+          <Image
+            src={frontmatter.cover}
+            alt={frontmatter.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      )}
+
       <div className="mb-12">
         <CustomLink
           href="/articles"
@@ -120,18 +132,6 @@ export default async function PostPage({ params }: PageProps) {
                     #{tag}
                   </Badge>
                 ))}
-              </div>
-            )}
-
-            {frontmatter.cover && (
-              <div className="relative -mx-4 mb-6 h-[300px] w-[calc(100%+2rem)] overflow-hidden rounded-xl md:-mx-12 md:h-[400px] md:w-[calc(100%+6rem)] lg:-mx-24 lg:w-[calc(100%+12rem)]">
-                <Image
-                  src={frontmatter.cover}
-                  alt={frontmatter.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
               </div>
             )}
           </header>
