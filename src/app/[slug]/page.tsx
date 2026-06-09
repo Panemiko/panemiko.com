@@ -84,9 +84,9 @@ export default async function PostPage({ params }: PageProps) {
   const shareUrl = `https://panemiko.com/${slug}`;
 
   return (
-    <MaxWidth className="pt-2 md:pt-10 pb-40">
+    <MaxWidth className="pt-2 pb-40 md:pt-10">
       {frontmatter.cover && (
-        <div className="relative -mx-4 mb-8 h-[300px] w-[calc(100%+2rem)] overflow-hidden rounded-none md:rounded-xl md:-mx-12 md:w-[calc(100%+6rem)] lg:-mx-24 lg:w-[calc(100%+12rem)]">
+        <div className="relative -mx-4 mb-8 h-[300px] w-[calc(100%+2rem)] overflow-hidden rounded-none md:-mx-12 md:w-[calc(100%+6rem)] md:rounded-xl lg:-mx-24 lg:w-[calc(100%+12rem)]">
           <Image
             src={frontmatter.cover}
             alt={frontmatter.title}
@@ -136,7 +136,7 @@ export default async function PostPage({ params }: PageProps) {
             )}
           </header>
 
-          <div className="prose prose-strong:text-foreground prose-headings:font-heading prose-a:text-primary prose-headings:text-foreground **:text-muted-foreground **:border-border max-w-none">
+          <div className="prose prose-em:text-inherit prose-strong:text-foreground prose-headings:font-heading prose-a:text-primary prose-headings:text-foreground **:text-muted-foreground **:border-border max-w-none">
             <MdxComponent />
           </div>
 
