@@ -6,6 +6,8 @@ import { type Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Geist_Mono } from "next/font/google";
 import { Header } from "./header";
+import Script from "next/script";
+import { env } from "@/env";
 
 const geistMonoHeading = Geist_Mono({
   subsets: ["latin"],
@@ -60,6 +62,13 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <body className="bg-background relative grid min-h-screen grid-cols-[auto_1fr] overflow-x-hidden">
+          {env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && env.NEXT_PUBLIC_UMAMI_SCRIPT_URL && (
+            <Script
+              src={env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+              data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+              strategy="afterInteractive"
+            />
+          )}
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
